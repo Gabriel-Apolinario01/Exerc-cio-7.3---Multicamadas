@@ -1,0 +1,26 @@
+<DOCTYPE html>
+<html>
+<head>
+    <title>Livraria</title>
+    <style>
+        body { font-family: Arial; background: #f5f5f5; }
+        h1 { color: #333; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: blue; }
+    </style>
+</head>
+<body>
+
+<h1> Livraria</h1>
+
+<ul>
+{% for livro in livros %}
+    <li>
+        {{ livro.nome }} - R$ {{ livro.preco }}
+        <a href="/comprar/{{ loop.index0 }}">[Comprar]</a>
+    </li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
