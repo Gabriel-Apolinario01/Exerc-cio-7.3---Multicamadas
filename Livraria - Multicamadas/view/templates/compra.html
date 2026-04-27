@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Compra</title>
+    <meta charset="UTF-8">
+    <title>Compra Realizada</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0fdf4;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .receipt-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .icon { font-size: 50px; margin-bottom: 10px; }
+
+        h1 { color: #166534; font-size: 1.5rem; }
+
+        .details {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px dashed #ccc;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
 
-<h1> Você comprou: {{ livro.nome }}</h1>
-<p>Preço: R$ {{ livro.preco }}</p>
+<div class="receipt-card">
+    <div class="icon"></div>
+    <h1>Pedido Confirmado!</h1>
 
-<a href="/"> Voltar</a>
+    <div class="details">
+        <p><strong>Livro:</strong> {{ livro.nome }}</p>
+        <p><strong>Valor Pago:</strong> R$ {{ livro.preco }}</p>
+    </div>
+
+    <p>Obrigado pela sua compra!</p>
+
+    <a href="/" class="back-link"> Voltar para a loja</a>
+</div>
 
 </body>
 </html>
