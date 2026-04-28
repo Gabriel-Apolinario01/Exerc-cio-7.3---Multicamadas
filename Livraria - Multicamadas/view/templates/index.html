@@ -21,7 +21,7 @@
             align-items: center;
         }
 
-        h1 { margin: 40px 0; color: var(--primary); font-weight: 300; font-size: 2.5rem; }
+        h1 { margin: 40px 0 10px 0; color: var(--primary); font-weight: 300; font-size: 2.5rem; }
 
         .container {
             width: 90%;
@@ -69,19 +69,25 @@
 </head>
 <body>
 
-<h1> Nossa Livraria</h1>
+    <h1> Nossa Livraria</h1>
 
-<div class="container">
-    {% for livro in livros %}
-    <div class="card">
-        <div>
-            <h3>{{ livro.nome }}</h3>
-            <p class="price">R$ {{ livro.preco }}</p>
-        </div>
-        <a href="/comprar/{{ loop.index0 }}" class="btn-buy">Comprar Agora</a>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <a href="/compras" style="color: var(--accent); text-decoration: none; font-size: 1.1rem; font-weight: bold;">
+            Ver Histórico de Compras
+        </a>
     </div>
-    {% endfor %}
-</div>
+
+    <div class="container">
+        {% for livro in livros %}
+        <div class="card">
+            <div>
+                <h3>{{ livro.nome }}</h3>
+                <p class="price">R$ {{ livro.preco }}</p>
+            </div>
+            <a href="/comprar/{{ loop.index0 }}" class="btn-buy">Comprar Agora</a>
+        </div>
+        {% endfor %}
+    </div>
 
 </body>
 </html>
